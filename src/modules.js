@@ -1,4 +1,4 @@
-import {contains, mergeRight} from 'ramda';
+import {includes, mergeRight} from 'ramda';
 import fs from 'fs';
 import Module from 'module';
 import path from 'path';
@@ -26,7 +26,7 @@ var methods = fs.readdirSync(path.join(ramdaPath, 'src'))
 export default function resolveModule(useES, name) {
 
   for (var category in methods) {
-    if (contains(name, methods)) {
+    if (includes(name, methods)) {
       return `ramda/${useES ? 'es' : 'src'}/${name}`;
     }
   }
